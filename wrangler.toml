@@ -1,7 +1,3 @@
 name = "mon-airhorn"
 compatibility_date = "2025-08-01"
 pages_build_output_dir = "public"
-
-[[kv_namespaces]]
-binding = "MON_USERS"
-id = "ISI_DENGAN_KV_NAMESPACE_ID"
