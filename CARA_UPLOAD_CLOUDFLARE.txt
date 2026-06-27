@@ -1,0 +1,43 @@
+CARA UPLOAD KE GITHUB + CLOUDFLARE
+
+UPLOAD KE GITHUB:
+Upload ISI folder ini ke repository GitHub.
+Pastikan di halaman utama GitHub terlihat:
+- public/
+- functions/
+- wrangler.toml
+- seed-users.json
+
+JANGAN upload sebagai .rar.
+
+CLOUDFLARE PAGES:
+1. Workers & Pages > Pages > Connect to Git
+2. Pilih repository
+3. Build command: kosong
+4. Build output directory: public
+5. Deploy
+
+SETUP DATABASE:
+1. Cloudflare > Workers & Pages > KV > Create namespace
+   Nama: MON_USERS
+
+2. Pages project > Settings > Functions > KV namespace bindings
+   Variable name: MON_USERS
+   KV namespace: MON_USERS
+
+3. Pages project > Settings > Environment variables
+   ADMIN_PASSWORD = password_admin_anda
+
+4. Redeploy
+
+ISI USER AWAL:
+Cloudflare KV MON_USERS > Add entry
+Key: users
+Value: copy isi dari seed-users.json
+
+LOGIN USER DEMO:
+Kode: MON-TEST-001
+PIN : 123456
+
+ADMIN:
+https://link-cloudflare.pages.dev/admin.html
